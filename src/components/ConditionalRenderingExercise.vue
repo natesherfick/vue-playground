@@ -7,7 +7,7 @@
                     <p>Add the v-if directive to the "player-card" element and set its value to false. The entire
                         element should no longer render to the screen.</p>
                     <!-- add code to element below -->
-                    <div class="player-card text-center">
+                    <div class="player-card text-center" v-if="true">
                         <div>
                             <img :src="player.photo" />
                         </div>
@@ -30,7 +30,7 @@
                     <p>The "player-card" element should be gone now. Lets go ahead and toggle the value to true to get
                         it to show up again.</p>
                     <!-- add code to element below -->
-                    <div class="player-card text-center">
+                    <div class="player-card text-center" v-if="showPlayer">
                         <div>
                             <img :src="player.photo" />
                         </div>
@@ -53,26 +53,26 @@
                     <p>Did the correct element show up? Practice changing the number value to make sure you can get the
                         correct element to display. Feel free to add another condition.</p>
                     <!-- v-if comparing num and 1 -->
-                    <div>
+                    <div v-if="num == 1">
                         <p>The Number is 1.</p>
                     </div>
                     <!-- v-else-if comparing num and 2 -->
-                    <div>
+                    <div v-else-if="num ==2">
                         <p>The Number is 2.</p>
                     </div>
                     <!-- v-else-if comparing num and 3 -->
-                    <div>
+                    <div v-else-if="num==3">
                         <p>The Number is 3.</p>
                     </div>
                     <!-- v-else to display if all the others fail -->
-                    <div>
+                    <div v-else>
                         <p>The Number is not 1, 2, or 3.</p>
                     </div>
                 </div>
                 <div class="border p-1">
                     <h5>Using The v-show Directive</h5>
                     <p>Change the v-if directive to a v-show on the "player-card" element below. </p>
-                    <div class="player-card text-center area" v-show="false">
+                    <div class="player-card text-center area" v-show="true">
                         <div>
                             <img :src="player.photo" />
                         </div>
@@ -103,7 +103,9 @@
         data() {
             return {
                 //add a property to toggle the player-card here.
+                showPlayer: true,
                 //add a property to set the number value here.
+                num: 2,
                 player: {
                     photo: "https://robohash.org/D$",
                     name: "D$",

@@ -9,9 +9,9 @@
                         "counter" and set its value to 0. In the paragraph element reference the "counter" property to
                         display its value.</p>
                     <!-- add event listener to the button element -->
-                    <button class="btn btn-primary m-2">Add 1</button>
+                    <button class="btn btn-primary m-2" @click="counter++">Add 1</button>
                     <p>The button has been clicked {{
-                        <!--add code here--> }} times.</p>
+                        counter}} times.</p>
                 </div>
                 <div class="border p-1">
                     <h5>Events Calling A Method</h5>
@@ -21,7 +21,7 @@
                         "greet". In the method called "greet", reference the "greeting" property and pass its value
                         into an alert().</p>
                     <!-- add event listener to the button element -->
-                    <button class="btn btn-primary m-2">Greet</button>
+                    <button class="btn btn-primary m-2" @click="greet">Greet</button>
                 </div>
             </div>
         </div>
@@ -35,12 +35,17 @@
         data() {
             return {
                 //add property called "counter"
+                counter: 0,
                 //add property called "greeting"
+                greeting: "Hello!!"
             }
         },
         computed: {},
         methods: {
             //create a method called "greet"
+            greet(){
+                alert(this.greeting)
+            }
         },
         components: {}
     }

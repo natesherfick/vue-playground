@@ -18,9 +18,8 @@
                         Then reference that data property in the html to display the value. Notice Vue will rerender
                         each time the value changes.</p>
                     <!-- add a v-model to this input below called "myName"-->
-                    <input>
-                    <p> {{
-                        <!-- Add your code inside the curlies --> }}</p>
+                    <input v-model='myName'>
+                    <p> Hello {{myName}}!</p>
                 </div>
                 <div class="border p-1">
                     <h5>Class Binding</h5>
@@ -29,7 +28,7 @@
                         property(isActive) to true. Notice Vue will rerender each time the value changes.</p>
                     <div class="red">
                         <!-- add a class binding attribute to the p tag -->
-                        <p>This text will turn green on active</p>
+                        <p :class='{active: isActive}'>This text will turn green on active</p>
                     </div>
                 </div>
             </div>
@@ -45,9 +44,10 @@
         data() {
             return {
                 //create a property called myName and set its value to "type your name here"
+                myName: Nate,
                 message: "Super secret message here!!!",
                 //change isActive to true 
-                isActive: false
+                isActive: true
             }
         }
     }

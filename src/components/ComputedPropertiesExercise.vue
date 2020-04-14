@@ -5,9 +5,9 @@
                 <div class="border p-1">
                     <div class="reverse-message">
                         <p>Original Message: {{
-                            <!--code here--> }}</p>
+                            message}}</p>
                         <p>Computed Reversed Message: {{
-                            <!--code here--> }}</p>
+                            reversedMessage}}</p>
                     </div>
                 </div>
             </div>
